@@ -1,0 +1,27 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Compile Sources",
+      "type": "shell",
+      "command": "gcc",
+      "args": [
+        "./src/*.c",
+        "-o",
+        "./bin/app.exe"
+      ]
+    },
+    {
+      "label": "Run",
+      "type": "shell",
+      "command": "./bin/app",
+      "dependsOn": [
+        "Compile Sources"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    }
+  ]
+}
